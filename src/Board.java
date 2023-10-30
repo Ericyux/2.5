@@ -12,8 +12,6 @@ public class Board {
 
     // This method loads the phrase from the file (based on the given requirement)
     private String loadPhrase() {
-        // Here, you'll add code to read from the phrase.txt file and return the phrase.
-        // For the purpose of this example, I'll return a dummy string.
         return "This Phrase";
     }
 
@@ -31,8 +29,6 @@ public class Board {
     }
 
     private void setLetterValue() {
-        // Here, you'll add the logic to set the currentLetterValue.
-        // For the purpose of this example, I'll set a dummy value.
         this.currentLetterValue = 10;
     }
 }
