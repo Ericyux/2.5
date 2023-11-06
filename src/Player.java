@@ -1,31 +1,34 @@
+
 import java.util.Scanner;
 
 public class Player {
     private String name;
     private double points;
+    private static final Scanner scanner = new Scanner(System.in);
 
-    // Default constructor
-    public Player() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter player's name: ");
-        this.name = scanner.nextLine();
+    // Default constructor now requires a name
+    public Player(String initialName) {
+        setName(initialName);
         this.points = 0;
         System.out.println("Welcome " + this.name + " to the game!");
     }
 
-    // Constructor with a name parameter
-    public Player(String inputName) {
-        this.name = inputName;
-        this.points = 0;
-        System.out.println("Welcome " + this.name + " to the game!");
+    public String makeGuess() {
+        return scanner.nextLine();
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String x) {
-        name = x;
+    // Mutator method for name with validation
+    public void setName(String newName) {
+        if (newName != null && newName.length() > 0 && newName.length() <= 10) {
+            name = newName;
+        } else {
+            System.out.println("Name must be 1-10 characters long.");
+            throw new IllegalArgumentException("Name must be 1-10 characters long.");
+        }
     }
 
     public double getPoints() {
