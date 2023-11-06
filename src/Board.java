@@ -14,7 +14,7 @@ public class Board {
     private String loadPhrase() {
         return "This Phrase";
     }
-    
+
     private String initializeSolvedPhrase(String phrase) {
         StringBuilder sb = new StringBuilder();
         for (char c : phrase.toCharArray()) {
@@ -76,4 +76,23 @@ public class Board {
     public String getSolvedPhrase() {
         return solvedPhrase;
     }
+
+
+    // Mutator method to set a new phrase
+    public void setPhrase(String newPhrase) {
+        if (newPhrase != null && !newPhrase.isEmpty()) {
+            phrase = newPhrase;
+            solvedPhrase = initializeSolvedPhrase(phrase);
+        }
+    }
+
+    // Mutator method to set the current letter value
+    public void setCurrentLetterValue(int value) {
+        if (value > 0) {
+            currentLetterValue = value;
+        } else {
+            System.out.println("Letter value must be positive.");
+        }
+    }
+
 }
