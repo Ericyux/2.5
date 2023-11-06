@@ -31,4 +31,8 @@ public class Player {
     public double getPoints() {
         return points;
     }
+
+    public void addToPoints(int value) {
+        points += value;
+    }
 }
