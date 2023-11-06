@@ -32,6 +32,13 @@ public class Board {
         this.currentLetterValue = 10;
     }
 
+    /* Updates solvedPhrase with the guessed letter filled in and returns true if the guessed letter appears in the phrase
+     *
+     * Precondition:
+     *  phrase and solvedPhrase are initialized
+     * Postcondition:
+     *  solvedPhrase is updated to include the guessed character in the appropriate places
+     */
     public boolean guessletter(char guess) {
         // variable to hold whether the letter is in the word.
         boolean letterFound = false;
@@ -56,5 +63,17 @@ public class Board {
         solvedPhrase = newPhrase;
         // returns if the letter was in the phrase
         return letterFound;
+    }
+
+    public int getCurrentLetterValue() {
+        return currentLetterValue;
+    }
+
+    public String getPhrase() {
+        return phrase;
+    }
+
+    public String getSolvedPhrase() {
+        return solvedPhrase;
     }
 }
